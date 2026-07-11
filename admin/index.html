@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cornchip Games | Admin</title>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script>
+      const passhash = "4b12674966bead1e2d533eec73f6b864efa0824b46696370cae00266f499a205";
+      async function generateSHA256(message) {
+        const msgBuffer = new TextEncoder().encode(message);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        return hashHex;
+      }
+      generateSHA256(prompt("This is an admin-only zone. Please enter the password:")).then(hash => console.log(hash));
+    </script>
+  </body>
+</html>
