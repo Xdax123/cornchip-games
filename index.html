@@ -24,7 +24,7 @@
 		<input type="text" id="subject" /><br>
 		<label for="body">Body:</label><br>
 		<textarea id="body" rows="10" cols="25"></textarea><br>
-		<button onclick="const email = 'cornchip-games@googlegroups.com'; const subject = encodeURIComponent(document.getElementById('subject')); const body = encodeURIComponent(document.getElementById('body')); window.open(`mailto:${email}?subject=${subject}&body=${body}`);">Open in default mailing client</button></details><br><br><br>
+		<button onclick="const email = 'cornchip-games@googlegroups.com'; const subject = encodeURIComponent(document.getElementById('subject').value); const body = encodeURIComponent(document.getElementById('body').value); window.open(`mailto:${email}?subject=${subject}&body=${body}`);">Open in default mailing client</button></details><br><br><br>
 	</div>
   </body>
 </html>
